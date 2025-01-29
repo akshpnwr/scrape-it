@@ -1,17 +1,22 @@
-import DesktopSidebar from '@/components/Sidebar';
-import { Separator } from '@/components/ui/separator';
+import BreadcrumbHeader from "@/components/BreadcrumbHeader";
+import { DesktopSidebar } from "@/components/Sidebar";
+import { ThemeModeToggle } from "@/components/ThemeModeToggle";
+import { Separator } from "@/components/ui/separator";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex h-screen">
       <DesktopSidebar />
-      <div className="flex flex-col flex-1 min-h-screen">
-        <header className="flex items-center justify-between px-6 py-4 h-[50px] container">
-          ScrapeFlow
+      <div className="flex min-h-screen flex-1 flex-col">
+        <header className="container flex h-[50px] items-center justify-between px-6 py-4">
+          <BreadcrumbHeader />
+          <div>
+            <ThemeModeToggle />
+          </div>
         </header>
         <Separator />
         <div className="overflow-auto">
-          <div className="flex-1 container py-4 text-accent-foreground">
+          <div className="container flex-1 py-4 text-accent-foreground">
             {children}
           </div>
         </div>
