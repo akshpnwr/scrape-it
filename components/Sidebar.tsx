@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   CoinsIcon,
@@ -6,34 +6,34 @@ import {
   Layers2Icon,
   MenuIcon,
   ShieldCheckIcon,
-} from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import Logo from "@/components/Logo";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { usePathname } from "next/navigation";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import { useState } from "react";
+} from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import Logo from '@/components/Logo';
+import { Button, buttonVariants } from '@/components/ui/button';
+import { usePathname } from 'next/navigation';
+import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+import { useState } from 'react';
 
 const routes = [
   {
-    href: "/",
-    label: "Home",
+    href: '/',
+    label: 'Home',
     icon: HomeIcon,
   },
   {
-    href: "/workflows",
-    label: "Workflows",
+    href: '/workflows',
+    label: 'Workflows',
     icon: Layers2Icon,
   },
   {
-    href: "/credentials",
-    label: "Credentials",
+    href: '/credentials',
+    label: 'Credentials',
     icon: ShieldCheckIcon,
   },
   {
-    href: "/billing",
-    label: "Billing",
+    href: '/billing',
+    label: 'Billing',
     icon: CoinsIcon,
   },
 ];
@@ -51,7 +51,7 @@ export function DesktopSidebar() {
           <Link
             className={buttonVariants({
               variant:
-                pathname === route.href ? "sidebarActiveItem" : "sidebarItem",
+                pathname === route.href ? 'sidebarActiveItem' : 'sidebarItem',
             })}
             key={route.href}
             href={route.href}
@@ -72,7 +72,7 @@ export function MobileSidebar() {
     <div className="block border-separate bg-background md:hidden">
       <nav className="container flex items-center justify-between px-8">
         <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger>
+          <SheetTrigger asChild>
             <Button variant="ghost" size="icon">
               <MenuIcon />
             </Button>
@@ -88,8 +88,8 @@ export function MobileSidebar() {
                   className={buttonVariants({
                     variant:
                       pathname === route.href
-                        ? "sidebarActiveItem"
-                        : "sidebarItem",
+                        ? 'sidebarActiveItem'
+                        : 'sidebarItem',
                   })}
                   onClick={() => setOpen((prev) => !prev)}
                   key={route.href}
