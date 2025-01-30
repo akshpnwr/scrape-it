@@ -1,19 +1,22 @@
 'use client';
 
 import { ThemeProvider } from 'next-themes';
-import { useEffect } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { useState } from 'react';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 export default function AppProviders({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  useEffect(() => {
-    console.log('AppProviders');
-  }, []);
+  const [queryClient] = useState(() => new QueryClient());
   return (
-    <ThemeProvider enableSystem attribute="class" defaultTheme="system">
-      {children}
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider enableSystem attribute="class" defaultTheme="system">
+        {children}
+      </ThemeProvider>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   );
 }

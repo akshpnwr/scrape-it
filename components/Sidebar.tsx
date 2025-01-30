@@ -7,7 +7,6 @@ import {
   MenuIcon,
   ShieldCheckIcon,
 } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import Logo from '@/components/Logo';
 import { Button, buttonVariants } from '@/components/ui/button';
