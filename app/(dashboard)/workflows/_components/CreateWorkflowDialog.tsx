@@ -59,7 +59,13 @@ export default function CreateWorkflowDialog({
   );
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog
+      open={open}
+      onOpenChange={() => {
+        form.reset();
+        setOpen(!open);
+      }}
+    >
       <DialogTrigger asChild>
         <Button>{triggerText ?? 'Create Workflow'}</Button>
       </DialogTrigger>

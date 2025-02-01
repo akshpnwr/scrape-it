@@ -1,4 +1,4 @@
-export enum WorkflowStatusEnum {
+export enum WorkflowStatus {
   DRAFT = 'DRAFT',
   PUBLISHED = 'PUBLISHED',
 }

@@ -7,7 +7,7 @@ import {
 } from '@/schema/workflow';
 import { auth } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
-import { WorkflowStatusEnum } from '@/types/workflow';
+import { WorkflowStatus } from '@/types/workflow';
 
 export async function createWorkflow(form: createWorkflowSchemaType) {
   const { success, data } = createWorkflowSchema.safeParse(form);
@@ -23,7 +23,7 @@ export async function createWorkflow(form: createWorkflowSchemaType) {
       ...data,
       userId,
       definition: 'TODO',
-      status: WorkflowStatusEnum.DRAFT,
+      status: WorkflowStatus.DRAFT,
     },
   });
 
