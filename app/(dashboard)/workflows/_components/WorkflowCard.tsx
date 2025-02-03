@@ -62,7 +62,7 @@ export default function WorkflowCard({
             <h3 className="flex items-center text-base font-bold text-muted-foreground">
               <Link
                 className="flex items-center hover:underline"
-                href={`/workflows/editor/${id}`}
+                href={`/workflow/editor/${id}`}
               >
                 {name}
               </Link>
@@ -80,7 +80,7 @@ export default function WorkflowCard({
               buttonVariants({ variant: 'outline', size: 'sm' }),
               'flex items-center gap-2',
             )}
-            href={`/workflows/editor/${id}`}
+            href={`/workflow/editor/${id}`}
           >
             <ShuffleIcon size={16} />
             Edit
