@@ -11,11 +11,16 @@ export default function NodeInputs({
   return <div className="flex flex-col gap-2 divide-y">{children}</div>;
 }
 
-export function NodeInput({ input }: { input: TaskParam }) {
-  console.log(input);
+export function NodeInput({
+  input,
+  nodeId,
+}: {
+  input: TaskParam;
+  nodeId: string;
+}) {
   return (
     <div className="relative flex w-full justify-start bg-secondary p-3">
-      <NodeParamField input={input} />
+      <NodeParamField param={input} nodeId={nodeId} />
       {input.hideHandle || (
         <Handle
           id={input.name}
